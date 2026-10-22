@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Getting Started with Next.js",
+      "body": "Next.js makes it easy to build fast, full-stack web applications with React."
+    },
+    {
+      "id": 2,
+      "title": "Understanding Server Components",
+      "body": "Server Components let you render UI on the server and keep client-side JavaScript lean."
+    },
+    {
+      "id": 3,
+      "title": "Building a Simple Blog",
+      "body": "A posts collection is a useful starting point for practicing data fetching and routing."
+    }
+  ]
+}
