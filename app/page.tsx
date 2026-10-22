@@ -9,7 +9,7 @@ async function page() {
 
   try {
     const res = await fetch("http://localhost:3001/posts", {
-      cache: "no-store",
+      next: { revalidate: 10 },
     });
 
     if (!res.ok) {
@@ -37,7 +37,9 @@ async function page() {
             </div>
 
             <div className="rounded-2xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-4 text-left shadow-lg shadow-cyan-900/20">
-              <div className="text-3xl font-bold text-cyan-300">{posts.length}</div>
+              <div className="text-3xl font-bold text-cyan-300">
+                {posts.length}
+              </div>
               <div className="text-sm text-slate-300">posts available</div>
             </div>
           </div>
@@ -69,9 +71,12 @@ async function page() {
             ))
           ) : (
             <div className="col-span-full rounded-3xl border border-dashed border-slate-700 bg-slate-900/50 p-12 text-center">
-              <p className="text-lg font-medium text-slate-200">No posts are available right now.</p>
+              <p className="text-lg font-medium text-slate-200">
+                No posts are available right now.
+              </p>
               <p className="mt-2 text-sm text-slate-400">
-                Check back later or start the local posts API to populate this feed.
+                Check back later or start the local posts API to populate this
+                feed.
               </p>
             </div>
           )}
